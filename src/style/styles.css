@@ -1,0 +1,200 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 기본설정 제거 */
+
+header {
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 27, 55, 0.1);
+  display: flex;
+}
+
+header > .header-container-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  background-image: url(../assets/toss-tech.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 20px;
+  align-items: center;
+}
+
+.logo-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.logo-container > img {
+  width: 100px;
+  height: 100%;
+}
+
+header > .navbar-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-container > .navbar-item {
+  padding: 12px 10px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #4e5968;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+}
+
+.navbar-container > .navbar-item:hover {
+  background-color: rgba(0, 27, 55, 0.1);
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main > h1 {
+  font-size: 36px;
+  margin: 52px 0 32px 0;
+  padding: 20px 0;
+  line-height: 32px;
+  color: #1f2e46;
+  margin-bottom: 20px;
+}
