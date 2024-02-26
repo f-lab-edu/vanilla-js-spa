@@ -1,18 +1,18 @@
 import createRouter from "./router.js";
-import designPage from "./page/design-page.js";
-import devPage from "./page/dev-page.js";
+import renderDesignPageTo from "./page/design-page.js";
+import renderDevPageTo from "./page/dev-page.js";
 
 const container = document.querySelector("main");
 const pages = {
-  design: () => designPage(container),
-  dev: () => devPage(container),
+  renderDesignPage: () => renderDesignPageTo(container),
+  renderDevPage: () => renderDevPageTo(container),
 };
 
 const router = createRouter();
 
 // 라우트 추가
-router.addRoute("#/design", pages.design);
-router.addRoute("#/dev", pages.dev);
+router.addRoute("#/design", pages.renderDesignPage);
+router.addRoute("#/dev", pages.renderDevPage);
 
 // 라우터 시작
 router.start();
