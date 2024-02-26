@@ -10,7 +10,12 @@ const pages = {
 
 const router = createRouter();
 
-router.addRoute("#/design", pages.design).addRoute("#/dev", pages.dev).start();
+// 라우트 추가
+router.addRoute("#/design", pages.design);
+router.addRoute("#/dev", pages.dev);
+
+// 라우터 시작
+router.start();
 
 // add click event to logo, page to home
 document.querySelector(".logo-container").addEventListener("click", () => {
