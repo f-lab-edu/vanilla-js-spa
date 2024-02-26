@@ -144,6 +144,7 @@ header > .header-container-inner {
   background-image: url(../assets/toss-tech.png);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
   width: 110px;
   height: 20px;
   align-items: center;

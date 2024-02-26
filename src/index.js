@@ -11,3 +11,8 @@ const pages = {
 const router = createRouter();
 
 router.addRoute("#/design", pages.design).addRoute("#/dev", pages.dev).start();
+
+// add click event to logo, page to home
+document.querySelector(".logo-container").addEventListener("click", () => {
+  location.href = "/";
+});
