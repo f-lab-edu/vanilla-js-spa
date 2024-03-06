@@ -1,12 +1,24 @@
-import renderDesignPageTo from "./page/design-page.js";
-import renderDevPageTo from "./page/dev-page.js";
+import { routes } from "./routes.js";
 
-document.querySelector("#design").addEventListener("click", () => {
-  history.pushState({}, "", "/#design");
-  renderDesignPageTo(document.querySelector("main"));
+function render(path) {
+  history.pushState({}, "", path);
+  const page = routes[path];
+  page(document.querySelector("main"));
+}
+
+function navigate(path) {
+  window.history.pushState({}, path, window.location.origin + path);
+  render(path);
+}
+
+window.addEventListener("popstate", () => {
+  render(window.location.pathname);
 });
 
-document.querySelector("#dev").addEventListener("click", () => {
-  history.pushState({}, "", "/#dev");
-  renderDevPageTo(document.querySelector("main"));
+// History API 사용, a태그 클릭 시 페이지 이동 에러 해결
+document.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate(a.getAttribute("href"));
+  });
 });

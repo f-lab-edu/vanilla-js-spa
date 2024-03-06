@@ -1,4 +1,4 @@
-const DesignPage = (container) => {
+const designPage = (container) => {
   container.innerHTML = `
     <h1>디자인</h1>
     <div class="blog-posts">
@@ -12,4 +12,4 @@ const DesignPage = (container) => {
   `;
 };
 
-export default DesignPage;
+export default designPage;
