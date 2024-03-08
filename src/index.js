@@ -1,23 +1,24 @@
-import createRouter from "./router.js";
-import renderDesignPageTo from "./page/design-page.js";
-import renderDevPageTo from "./page/dev-page.js";
+import { routes } from "./routes.js";
 
-const container = document.querySelector("main");
-const pages = {
-  renderDesignPage: () => renderDesignPageTo(container),
-  renderDevPage: () => renderDevPageTo(container),
-};
+function render(path) {
+  history.pushState({}, "", path);
+  const page = routes[path];
+  page(document.querySelector("main"));
+}
 
-const router = createRouter();
+function navigate(path) {
+  window.history.pushState({}, path, window.location.origin + path);
+  render(path);
+}
 
-// 라우트 추가
-router.addRoute("#/design", pages.renderDesignPage);
-router.addRoute("#/dev", pages.renderDevPage);
+window.addEventListener("popstate", () => {
+  render(window.location.pathname);
+});
 
-// 라우터 시작
-router.start();
-
-// add click event to logo, page to home
-document.querySelector(".logo-container").addEventListener("click", () => {
-  location.href = "/";
+// History API 사용, a태그 클릭 시 페이지 이동 에러 해결
+document.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate(a.getAttribute("href"));
+  });
 });
