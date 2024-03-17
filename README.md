@@ -6,7 +6,9 @@ Vanilla Javascript를 이용해 SPA를 구현
 
 # use
 - node version 16.19.1
-- Express.js
+- hash를 사용한 방법의 Routing 구현
+- BrowserHistory를 사용한 방법의 Routing 구현
+
 
 # run
 node server.js
